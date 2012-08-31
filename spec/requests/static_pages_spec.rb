@@ -34,4 +34,15 @@ describe "Static pages" do
     	page.should have_selector('title', :text => "About Us")
     end
   end
+
+  describe "Contact page" do
+  	it "no contiene 'Contact'" do
+  		visit '/static_pages/contact'
+  		page.should have_selector('h1', :text => 'Contact')
+  	end
+  	it "no tiene el titulo correcto" do
+  		visit '/static_pages/contact'
+  		page.should have_selector('title', :text => 'Contact')
+  	end
+  end
 end
